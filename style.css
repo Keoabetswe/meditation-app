@@ -14,6 +14,22 @@
 .select-time, .select-sound, .select-player {
     height: 80%;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.select-player {
+    position: relative;
+}
+
+.select-player svg {
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .select-time {
@@ -26,4 +42,8 @@
 
 .select-player {
     background: cornflowerblue;
+}
+
+.video {
+    display: none;
 }
