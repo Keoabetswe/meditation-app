@@ -85,11 +85,11 @@ video {
 }
 
 .select-sound button:nth-child(2) {
-    background: coral;
+    background: orange;
 }
 
 .select-sound button:nth-child(2):hover {
-    background:lightsalmon;
+    background: coral;
 }
 
 
