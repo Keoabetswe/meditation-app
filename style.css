@@ -63,6 +63,11 @@ video {
     background: white;
 }
 
+.select-sound button:hover {
+    color: black;
+    background: white;
+}
+
 .select-sound button {
     border: none;
     height: 120px;
@@ -75,9 +80,18 @@ video {
     background: cornflowerblue;
 }
 
+.select-sound button:nth-child(1):hover {
+    background:blue;
+}
+
 .select-sound button:nth-child(2) {
     background: coral;
 }
+
+.select-sound button:nth-child(2):hover {
+    background:lightsalmon;
+}
+
 
 .select-sound button img {
     height: 100%;
