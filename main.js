@@ -1,7 +1,7 @@
 const app = () => {
     const sound = document.querySelector('.sound');
     const play = document.querySelector('.play');
-    const outline = document.querySelector('.moving-outline');
+    const outline = document.querySelector('.moving-outline circle');
     const video = document.querySelector('.default-vid video');
 
     //sounds
@@ -12,7 +12,32 @@ const app = () => {
 
     //get outline length
     const outlineLength = outline.getTotalLength();
-    
-}
+    // console.log(outlineLength);
+
+    //duration
+    let fakeDuration = 600;
+
+    outline.style.strokeDasharray = outlineLength;
+    outline.style.strokeDashoffset = outlineLength;
+
+    //play sound
+    play.addEventListener('click', () => {
+        isPlaying(sound);
+    });
+
+    //stop/play sound function
+    const isPlaying = sound => {
+        if(sound.paused) {
+            sound.play();
+            video.play();
+            play.src = "images/pause.svg";
+        }
+        else {
+            sound.pause();
+            video.pause();
+            play.src = "images/play.svg";
+        }
+    }
+};
 
 app();
