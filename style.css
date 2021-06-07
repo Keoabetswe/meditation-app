@@ -53,4 +53,5 @@ video {
     width: 30%;
     height: 10%;
     background: none;
+    border: 2px solid white;
 }
