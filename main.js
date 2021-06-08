@@ -38,6 +38,19 @@ const app = () => {
             play.src = "images/play.svg";
         }
     }
+
+    //circle animation
+    sound.ontimeupdate = () => {
+        let currentTime = sound.currentTime;
+        let elapsedTime = fakeDuration - currentTime;
+        let seconds = Math.floor(elapsedTime % 60);
+        let minutes = Math.floor(elapsedTime / 60);
+
+        let progress = outlineLength - (currentTime / fakeDuration) * outlineLength;
+        outline.style.strokeDashoffset = progress;
+    }
+
 };
+
 
 app();
