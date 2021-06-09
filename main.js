@@ -5,7 +5,7 @@ const app = () => {
     const video = document.querySelector('.default-vid video');
 
     //sounds
-    const selectedSound = document.querySelector('.select-sound button');
+    const selectedSound = document.querySelectorAll('.select-sound button');
 
     //time display
     const timeDisplay = document.querySelector('.time-display');
@@ -19,6 +19,15 @@ const app = () => {
 
     outline.style.strokeDasharray = outlineLength;
     outline.style.strokeDashoffset = outlineLength;
+
+    //pick different sounds
+    selectedSound.forEach(sound => {
+        sound.addEventListener('click', function() {
+            sound.src = this.getAttribute('data-sound');
+            video.src = this.getAttribute('data-video');
+            isPlaying(sound);
+        });
+    });
 
     //play sound
     play.addEventListener('click', () => {
@@ -59,8 +68,14 @@ const app = () => {
 
         //animate text
         timeDisplay.textContent = `${minutes}:${seconds}`;
-    };
 
+        if(currentTime >= fakeDuration) {
+            sound.pause();
+            sound.currentTime = 0;
+            play.src = 'images/play.svg';
+            video.pause();
+        }
+    };
 };
 
 app();
