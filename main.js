@@ -9,7 +9,7 @@ const app = () => {
 
     //time display
     const timeDisplay = document.querySelector('.time-display');
-
+    const timeSelect = document.querySelectorAll('.select-time button');
     //get outline length
     const outlineLength = outline.getTotalLength();
     // console.log(outlineLength);
@@ -23,6 +23,14 @@ const app = () => {
     //play sound
     play.addEventListener('click', () => {
         isPlaying(sound);
+    });
+
+    //select sound
+    timeSelect.forEach(option => {
+        option.addEventListener('click', function() {
+            fakeDuration = this.getAttribute("data-time");
+            timeDisplay.textContent = `${Math.floor(fakeDuration / 60)}:${Math.floor(fakeDuration % 60)}`;
+        });
     });
 
     //stop/play sound function
@@ -54,6 +62,5 @@ const app = () => {
     };
 
 };
-
 
 app();
