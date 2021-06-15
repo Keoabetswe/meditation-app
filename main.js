@@ -6,21 +6,18 @@ const app = () => {
 
     //sounds
     const selectedSound = document.querySelectorAll('.select-sound button');
-
     //time display
     const timeDisplay = document.querySelector('.time-display');
     const timeSelect = document.querySelectorAll('.select-time button');
     //get outline length
     const outlineLength = outline.getTotalLength();
-    // console.log(outlineLength);
-
     //duration
     let fakeDuration = 600;
 
     outline.style.strokeDasharray = outlineLength;
     outline.style.strokeDashoffset = outlineLength;
 
-    //pick different sounds
+    //different sounds
     selectedSound.forEach(sound => {
         sound.addEventListener('click', function() {
             sound.src = this.getAttribute('data-sound');
