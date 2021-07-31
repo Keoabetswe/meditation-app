@@ -3,6 +3,7 @@ const app = () => {
     const play = document.querySelector('.play');
     const outline = document.querySelector('.moving-outline circle');
     const video = document.querySelector('.default-vid video');
+    const replay = document.querySelector('.replay');
 
     //sounds
     const selectedSound = document.querySelectorAll('.select-sound button');
